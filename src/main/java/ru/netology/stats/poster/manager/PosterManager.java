@@ -6,7 +6,7 @@ public class PosterManager {
     private String[] movies = new String[0];
     private int limit;
 
-    public PosterManager(){
+    public PosterManager() {
         this.limit = 10;
     }
 
@@ -29,7 +29,7 @@ public class PosterManager {
         return movies;
     }
 
-   public String[] findLast() {
+    public String[] findLast() {
         int resultLength;
         if (movies.length < limit) {
             resultLength = movies.length;
@@ -37,10 +37,10 @@ public class PosterManager {
             resultLength = limit;
         }
         String[] tmp = new String[resultLength];
-       for (int i = 0; i < tmp.length; i++) {
-           tmp[i] = movies[movies.length - 1 - i];
-       }
-       return tmp;
+        for (int i = 0; i < tmp.length; i++) {
+            tmp[i] = movies[movies.length - 1 - i];
+        }
+        return tmp;
 
 
     }
