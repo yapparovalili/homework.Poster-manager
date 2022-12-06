@@ -22,8 +22,8 @@ public class PosterManagerTest {
 
     @Test
 
-    public void testFindLast() {
-        PosterManager manager = new PosterManager(10);
+    public void testMinFindLast() {
+        PosterManager manager = new PosterManager();
 
         manager.addMovie("Film I");
         manager.addMovie("Film II");
@@ -43,7 +43,7 @@ public class PosterManagerTest {
 
     @Test
 
-    public void testMaxFindLast() {
+    public void testEquallyFindLast() {
         PosterManager manager = new PosterManager();
 
         manager.addMovie("Film I");
@@ -60,6 +60,30 @@ public class PosterManagerTest {
 
         String[] actual = manager.findLast();
         String[] expected = {"Film X", "Film IX", "Film VIII", "Film VII", "Film VI", "Film V", "Film IV", "Film III", "Film II", "Film I"};
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+
+    public void testMaxFindLast() {
+        PosterManager manager = new PosterManager();
+
+        manager.addMovie("Film I");
+        manager.addMovie("Film II");
+        manager.addMovie("Film III");
+        manager.addMovie("Film IV");
+        manager.addMovie("Film V");
+        manager.addMovie("Film VI");
+        manager.addMovie("Film VII");
+        manager.addMovie("Film VIII");
+        manager.addMovie("Film IX");
+        manager.addMovie("Film X");
+        manager.addMovie("Film XI");
+
+
+        String[] actual = manager.findLast();
+        String[] expected = {"Film XI", "Film X", "Film IX", "Film VIII", "Film VII", "Film VI", "Film V", "Film IV", "Film III", "Film II"};
 
         Assertions.assertArrayEquals(expected, actual);
     }
